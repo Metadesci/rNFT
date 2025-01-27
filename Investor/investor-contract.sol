@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: FarcanaLabs
+// SPDX-License-Identifier:
 pragma solidity ^0.8.0;
 
 struct Investor {
@@ -8,7 +8,7 @@ struct Investor {
 
 abstract contract InvestorContract {
 
-    uint256 public farcanaLabsShare;
+    uint256 public shareAmount;
     uint256 public requiredInvestmentAmount;
     uint256 public initialNumberOfCoins;
     uint256 public maxSupplyCoins;
@@ -18,9 +18,9 @@ abstract contract InvestorContract {
     event purchaseCoins(address indexed investor, uint256 count);
 
     mapping(address => Investor) public registeredInvestors;
-    
-    function farcanaLabsTake(uint256 coinsCount) internal {
-        farcanaLabsShare = coinsCount;
+
+    function Take(uint256 coinsCount) internal {
+        shareAmount = coinsCount;
         maxSupplyCoins -= coinsCount;
     }
 
@@ -48,4 +48,3 @@ abstract contract InvestorContract {
         registeredInvestors[msg.sender] = investor;
     }
 }
-

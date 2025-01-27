@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: FarcanaLabs
+
 pragma solidity ^0.8.0;
 
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.8/contracts/token/ERC721/ERC721.sol";
@@ -15,11 +15,11 @@ contract rNFT_farcanaLabs is ERC721, Ownable, CommonContract{
     mapping(uint256 => Role) private tokenMembership;
 
     function _baseURI() internal view virtual override returns (string memory) {
-        return "https://farcana.com/";
+        return "";
     }
 
     function _transfer(address from, address to, uint256 tokenId) internal virtual override {
-        require(false, 'ipnft farcanaLabs not support transfer functional');
+        require(false, 'ipnft  not support transfer functional');
         from; to; tokenId;
     }
 

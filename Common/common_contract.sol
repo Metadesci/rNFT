@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: FarcanaLabs
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 import "../Donor/donor-contract.sol";
@@ -27,7 +27,7 @@ struct User {
 abstract contract CommonContract is DonorContract, GameStudioContract, InvestorContract, ScientistContract {
 
     function _whenFirstInvestAmountReady() internal {
-        scientist.wallet.transfer((initialNumberOfCoins - farcanaLabsShare) * coinCost);
+        scientist.wallet.transfer((initialNumberOfCoins - shareAmount) * coinCost);
     }
 
     function _whenGettingBigInvestment(uint256 amount) internal {

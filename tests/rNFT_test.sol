@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: GPL-3.0
+// SPDX-License-Identifier:
         
 pragma solidity >=0.4.22 <0.9.0;
 
@@ -10,7 +10,7 @@ import "remix_tests.sol";
 // But it will work fine in 'Solidity Unit Testing' plugin
 import "remix_accounts.sol";
 // <import file to test>
-import "../rNFT-farcana-labs.sol";
+import "../rNFT.sol";
 
 
 string  constant agreement        = "Agrreement";
@@ -20,10 +20,10 @@ string  constant URI              = "Base URI";
 uint256 constant unixTimeDeadline = 1666323128;
 uint256 constant coinsCount       = 1000;
 uint256 constant amount           = 1000;
-uint256 constant fixFarcaLabsShare= 100;
+uint256 constant fixShare= 100;
 address constant sci_wallet       = 0xdD870fA1b7C4700F2BD7f44238821C26f7392148;
 
-contract ipnft_test is rNFT_farcanaLabs(agreement, projectName, symbol, URI, unixTimeDeadline, coinsCount, amount, fixFarcaLabsShare, sci_wallet) {
+contract ipnft_test is rNFT(agreement, projectName, symbol, URI, unixTimeDeadline, coinsCount, amount, fixShare, sci_wallet) {
 
     event StringFailure(string stringFailure);
 
@@ -81,7 +81,7 @@ contract ipnft_test is rNFT_farcanaLabs(agreement, projectName, symbol, URI, uni
     //Only owner
     function gameStudioRegistrationTest() public {
         address studioWallet = TestsAccounts.getAccount(3);
-        string memory studioName = "Farcana";
+        string memory studioName = "";
         gameStudioRegistration(studioWallet, studioName);
 
         Assert.ok(registeredGameStudios[studioWallet].isValue, "not registering address");
@@ -90,7 +90,7 @@ contract ipnft_test is rNFT_farcanaLabs(agreement, projectName, symbol, URI, uni
 
     function gameRegistrationTest() public {
         address owner = TestsAccounts.getAccount(3);
-        string  memory name              = "Farcana";
+        string  memory name              = "";
         string  memory maps              = "Oasis, Military Base";
         string  memory deviceIntegration = "HearBeat Mouse";
         gameRegistration(owner, name, maps, deviceIntegration);

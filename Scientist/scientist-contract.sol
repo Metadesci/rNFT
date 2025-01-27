@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: FarcanaLabs
+// SPDX-License-Identifier:
 pragma solidity ^0.8.0;
 
 struct Scientist {
@@ -11,7 +11,7 @@ struct Scientist {
 
 abstract contract ScientistContract {
     Scientist public scientist;
-    
+
     bool public isDatasetReady;
     bool public isInvestAmountReady;
     bool public isExperimentReady;
@@ -24,7 +24,7 @@ abstract contract ScientistContract {
     function _toogleIsDatasetReady() internal {
         isDatasetReady = !isDatasetReady;
     }
-    
+
     function _toogleIsInvestAmountReady() internal {
         isInvestAmountReady = !isInvestAmountReady;
     }
@@ -33,4 +33,3 @@ abstract contract ScientistContract {
         isExperimentReady = !isExperimentReady;
     }
 }
-
